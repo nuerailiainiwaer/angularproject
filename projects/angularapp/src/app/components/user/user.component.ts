@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { User } from '../../models/User';
 
 @Component({
     selector:"app-user",
@@ -9,25 +10,36 @@ import { Component } from '@angular/core';
 })
 
 
- export class UserComponents{
+ export class UserComponents implements OnInit{
 ////properties
-    firstName='john';
-    lastName="Doe";
-    age=30;
+user:User;
+   
     /////method
     constructor(){
-        //console.log('fuck you all');
+       
+    
+
+    }
+
+    ngOnInit(){
+        this.user = {
+            firstName:'john',
+            lastName:'Doe',
+            age:30,
+            address:{
+                street:"50 Main str",
+                city: "Boston",
+                state:"Maa"
+ 
+            }
+        }
 
     }
 
 
-    sayHello(){
-        console.log(`hello${this.lastName}`);
-    }
-
-    hasBirthDay(){
-        this.age +=1;
-    }
+  
 
 
 }
+
+
