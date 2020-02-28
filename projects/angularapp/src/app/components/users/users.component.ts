@@ -12,6 +12,7 @@ export class UsersComponent implements OnInit {
   users: User[];
   showExtended: boolean = true;
   loaded:boolean=false;
+  enableAdd: boolean=false;
 
   constructor() {
     
@@ -29,7 +30,8 @@ export class UsersComponent implements OnInit {
               city: "Boston",
               state:"Maa"
   
-          }
+          },
+          image:'http://lorempixel.com/600/600/people/3'
         },
         {
           firstName:'amina',
@@ -40,7 +42,8 @@ export class UsersComponent implements OnInit {
               city: "Noston",
               state:"Naa"
   
-          }
+          },
+          image:'http://lorempixel.com/600/600/people/3'
         },
         {
           firstName:'nurbiyta',
@@ -51,7 +54,8 @@ export class UsersComponent implements OnInit {
               city: "Coston",
               state:"Naa"
   
-          }
+          },
+          image:'http://lorempixel.com/600/600/people/3'
         } 
   
       ];
