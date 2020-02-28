@@ -12,7 +12,9 @@ export class UsersComponent implements OnInit {
   users: User[];
   showExtended: boolean = true;
   loaded:boolean=false;
-  enableAdd: boolean=false;
+  enableAdd: boolean=true;
+  currentClasses={};
+  currentStyle={};
 
   constructor() {
     
@@ -31,19 +33,26 @@ export class UsersComponent implements OnInit {
               state:"Maa"
   
           },
-          image:'http://lorempixel.com/600/600/people/3'
+          image:'http://lorempixel.com/600/600/people/3',
+          isActive:true,
+          balance:86,
+          registered: new Date('03/11/2018 06:20:00')
         },
         {
           firstName:'amina',
           lastName:'anwar',
-          age:33,
+          age:78,
           address:{
               street:"51 Main str",
               city: "Noston",
               state:"Naa"
   
           },
-          image:'http://lorempixel.com/600/600/people/3'
+          image:'http://lorempixel.com/600/600/people/2',
+          isActive:false,
+          balance: 78,
+          registered: new Date('03/11/2018 06:20:00')
+
         },
         {
           firstName:'nurbiyta',
@@ -55,12 +64,20 @@ export class UsersComponent implements OnInit {
               state:"Naa"
   
           },
-          image:'http://lorempixel.com/600/600/people/3'
+          image:'http://lorempixel.com/600/600/people/1',
+          isActive:false,
+          balance: 50,
+          registered: new Date('03/11/2015 06:20:00')
         } 
   
       ];
 
       this.loaded=true;
+
+
+
+      // this.setCurrentClaasses();
+      // this.setCurrentStyle();
   
 
    
@@ -69,19 +86,33 @@ export class UsersComponent implements OnInit {
 
     
 
-    this.addUser({
-      firstName:'david',
-      lastName:'Jackson',
-      age:35,
-     
-    } 
-    );
+    
+    
   }
 
 
   addUser(user: User){
     this.users.push(user);
 
+  }
+
+
+  ///class binding
+
+  setCurrentClaasses(){
+    this.currentClasses={
+      'btn-success':this.enableAdd,
+      'big-text':this.showExtended
+    }
+  }
+
+  ///style binding ngstyle
+
+  setCurrentStyle(){
+    this.currentStyle={
+      'padding-top' : this.showExtended ? '0' : '40px',
+      'font-size':this.showExtended ? '': '40px'
+    }
   }
 
 }
