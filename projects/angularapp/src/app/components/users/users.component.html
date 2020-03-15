@@ -15,7 +15,7 @@
                 <h3 [ngStyle]="currentStyle"> {{user.firstName | uppercase}}{{user.lastName | lowercase}}</h3>
                 
                 <ul class="list-group" *ngIf="showExtended && user.age && user.address">
-                    <li class="list-group-item">{{user.address.street}}</li>
+                    <li class="list-group-item" >{{user.address.street}}</li>
                     <li class="list-group-item">{{user.address.city}}</li>
                     <li class="list-group-item">{{user.address.state}}</li>
                     <!-- curency pipe -->
@@ -23,13 +23,12 @@
                     <!-- data pipe -->
                     <li class="list-group-item">Joined: {{user.registered | date:"longDate"}}</li>
 
-                    <li class="list-group-item">{{5 }}</li>
+                    <li class="list-group-item">{{5}}</li>
 
                 </ul>
 
             </div>
         </div>
-        
     </li>
     
 </ul>

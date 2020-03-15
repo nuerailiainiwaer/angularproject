@@ -48,7 +48,7 @@ export class UsersComponent implements OnInit {
               state:"Naa"
   
           },
-          image:'http://lorempixel.com/600/600/people/2',
+          image:'http://lorempixel.com/600/600/people/4',
           isActive:false,
           balance: 78,
           registered: new Date('03/11/2018 06:20:00')
@@ -103,6 +103,7 @@ export class UsersComponent implements OnInit {
     this.currentClasses={
       'btn-success':this.enableAdd,
       'big-text':this.showExtended
+      
     }
   }
 
